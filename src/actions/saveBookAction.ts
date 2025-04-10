@@ -1,12 +1,12 @@
 "use server";
 
-import { Book } from "@/server/types";
+import { BookInput } from "@/server/types";
 import { request } from "@/utils";
 import { revalidateTag } from "next/cache";
 import { redirect } from "next/navigation";
 
 export const saveBookAction = async (
-  values: Omit<Book, "id"> & { id?: string }
+  values: Omit<BookInput, "id"> & { id?: string }
 ) => {
   const { id, ...rest } = values;
   if (id) {

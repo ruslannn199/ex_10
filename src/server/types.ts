@@ -2,7 +2,7 @@ export type PaginatedResponse<T> = {
   items: T[];
 };
 
-export type Book = {
+export type BookInput = {
   id: string;
   name: string;
   author: string;
@@ -10,4 +10,8 @@ export type Book = {
   genre: string;
   image: string;
   year: number;
+};
+
+export type Book = Omit<BookInput, "pageCount"> & {
+  pagecount: number;
 };

@@ -1,6 +1,6 @@
 'use client';
 
-import { Book } from '@/server/types';
+import { Book, BookInput } from '@/server/types';
 import { Button, Form, Input } from 'antd';
 import FormItem from 'antd/es/form/FormItem';
 import { saveBookAction } from '@/actions';
@@ -14,7 +14,7 @@ type Props = {
 
 export const BookForm = ({ initialValues, id }: Props) => {
   const [form] = Form.useForm();
-  const onFinish = async (values: Values) => {
+  const onFinish = async (values: Omit<BookInput, 'id'>) => {
     await saveBookAction({ ...values, id });
   };
   return (
@@ -25,7 +25,7 @@ export const BookForm = ({ initialValues, id }: Props) => {
       initialValues={{
         name: initialValues?.name,
         author: initialValues?.author,
-        pageCount: initialValues?.pageCount ?? 2,
+        pageCount: initialValues?.pagecount ?? 2,
         genre: initialValues?.genre,
         image: initialValues?.image,
         year: initialValues?.year ?? new Date().getFullYear(),
