@@ -27,17 +27,20 @@ const items: ItemType<MenuItemType>[] = [
   {
     label: <Link href='/books' >Книги</Link>,
     key: "books",
+  },
+  {
+    label: <Link href='/books/create' >Добавить книгу</Link>,
+    key: "create",
   }
 ]
 
 export default async function RootLayout({
   children,
-  params,
 }: Readonly<{
   children: React.ReactNode;
   params: Promise<{ [key: string]: string }>;
 }>) {
-  const paths = await params;
+
   return (
     <html lang="ru">
       <body className={roboto.className}>
@@ -50,7 +53,7 @@ export default async function RootLayout({
                   <Menu
                     theme="dark"
                     mode="horizontal"
-                    defaultSelectedKeys={Object.keys(paths).includes('books') ? ['books'] : ['home']}
+                    defaultSelectedKeys={['home']}
                     items={items}
                     style={{ flex: 1, minWidth: 0 }}
                   />
