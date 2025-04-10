@@ -29,6 +29,9 @@ importers:
       dayjs:
         specifier: 1.11.13
         version: 1.11.13
+      debounce:
+        specifier: ^2.2.0
+        version: 2.2.0
       express:
         specifier: 5.0.1
         version: 5.0.1
@@ -997,6 +1000,10 @@ packages:
 
   dayjs@1.11.13:
     resolution: {integrity: sha512-oaMBel6gjolK862uaPQOVTA7q3TZhuSvuMQAAglQDOWYO9A91IrAOUJEyKVlqJlHE0vq5p5UXxzdPfMH/x6xNg==, tarball: https://npm.yandex-team.ru/dayjs/-/dayjs-1.11.13.tgz?rbtorrent=}
+
+  debounce@2.2.0:
+    resolution: {integrity: sha512-Xks6RUDLZFdz8LIdR6q0MTH44k7FikOmnh5xkSjMig6ch45afc8sjTjRQf3P6ax8dMgcQrYO/AR2RGWURrruqw==, tarball: https://npm.yandex-team.ru/debounce/-/debounce-2.2.0.tgz?rbtorrent=}
+    engines: {node: '>=18'}
 
   debug@3.2.7:
     resolution: {integrity: sha512-CFjzYYAi4ThfiQvizrFQevTTXHtnCqWfe7x1AhgEscTz6ZbLbfoLRLPugTQyBth6f8ZERVUSyWHFD/7Wu4t1XQ==, tarball: https://npm.yandex-team.ru/debug/-/debug-3.2.7.tgz?rbtorrent=536d1f9e848d8ab7f18c5b581a8d331fd7697139}
@@ -3367,6 +3374,8 @@ snapshots:
       is-data-view: 1.0.2
 
   dayjs@1.11.13: {}
+
+  debounce@2.2.0: {}
 
   debug@3.2.7:
     dependencies:

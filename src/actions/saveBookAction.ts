@@ -28,5 +28,9 @@ export const saveBookAction = async (
   }
 
   revalidateTag("books");
-  redirect("/");
+  if (id) {
+    redirect(`/books/${id}`);
+  } else {
+    redirect("/books");
+  }
 };

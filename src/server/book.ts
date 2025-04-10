@@ -20,6 +20,16 @@ export class BookController {
   };
 
   public static getAll: RequestHandler = async (req, res) => {
+    const { q } = req.query;
+
+    if (q) {
+      const items = await query<Book>(
+        `SELECT * FROM books WHERE name ILIKE $1`,
+        [`%${q}%`]
+      );
+
+      res.status(200).json({ items });
+    }
     const items = await query<Book>(`SELECT * FROM books`);
 
     res.status(200).json({ items });
