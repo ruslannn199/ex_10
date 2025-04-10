@@ -7,7 +7,7 @@ types.setTypeParser(types.builtins.TIMESTAMPTZ, (timeStr) => timeStr);
 export const pool = new Pool({
   user: "rootUser",
   host: "127.0.0.1",
-  database: "todo",
+  database: "books",
   password: "somePwd",
   port: 5555,
 });
