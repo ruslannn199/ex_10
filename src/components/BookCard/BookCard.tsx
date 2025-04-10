@@ -1,6 +1,7 @@
 import { Book } from "@/server/types";
 import { Card, Image } from "antd";
 import Meta from "antd/es/card/Meta";
+import Link from 'next/link';
 
 type Props = {
   book: Book;
@@ -19,7 +20,9 @@ export const BookCard = ({ book }: Props) => {
         justifyContent: "space-between",
       }}
     >
-      <Meta title={name} description={author} />
+      <Link href={`/books/${book.id}`}>
+        <Meta title={name} description={author} />
+      </Link>
     </Card>
   );
 };
