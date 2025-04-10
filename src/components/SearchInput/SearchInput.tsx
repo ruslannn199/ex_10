@@ -23,5 +23,5 @@ export const SearchInput = () => {
     const { value } = e.target;
     pushSearch(value);
   }, 500);
-  return <Search onChange={handleChange} onSearch={handleSearch} />;
+  return <Search placeholder='Поиск по книгам' onChange={handleChange} onSearch={handleSearch} />;
 };
